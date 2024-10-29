@@ -43,7 +43,8 @@ public class Program
                ValidateIssuerSigningKey = true,
                ValidIssuer = "my_app",
                ValidAudience = "my_service",
-               IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(key))
+               IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(key)),
+               ClockSkew = TimeSpan.Zero
            };
        });
         builder.Services.AddAuthorization();
